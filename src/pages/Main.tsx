@@ -11,7 +11,7 @@ function Main() {
 
   return (
     <div className="mx-auto space-y-2 text-red-500 w-96">
-      {repos.map((repo) => (
+      {reposSubscribe.map((repo) => (
         <a
           href={repo.clone_url}
           target="_blank"

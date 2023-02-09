@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useSetRecoilState } from "recoil";
-
+import { useNavigate } from "react-router-dom";
 import { fetchRepos } from "api";
 import { reposState } from "store";
 import { Repo } from "type";
 
 function Navbar() {
+  const navigate = useNavigate();
+
   const [search, setSearch] = useState<string>("");
   const setRepos = useSetRecoilState<Repo[]>(reposState);
 
@@ -21,14 +23,22 @@ function Navbar() {
       setRepos([]);
     } else {
       const res = await fetchRepos(search);
-      console.log(123, res);
+
       setRepos(res.data);
+      navigate(`repository/${search}`);
     }
   };
 
   return (
     <div className="inline-flex items-center justify-between w-full px-8 bg-[#161B22] h-14">
-      <div className="text-white">로고</div>
+      <div
+        className="text-white"
+        onClick={() => {
+          navigate(`/`);
+        }}
+      >
+        로고
+      </div>
       <form onSubmit={(e) => onSearch(e)}>
         <input
           placeholder="Find a repository"
