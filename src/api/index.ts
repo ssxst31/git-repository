@@ -7,6 +7,7 @@ const octokit = new Octokit({
 export const fetchRepos = async (username: string) => {
   const res = await octokit.request("GET /users/{username}/repos", {
     username: username,
+    sort: "updated",
   });
 
   return res;
