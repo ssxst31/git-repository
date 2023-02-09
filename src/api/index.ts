@@ -4,10 +4,10 @@ const octokit = new Octokit({
   auth: process.env.REACT_APP_GIT_TOKEN,
 });
 
-export const fetchRepos = async () => {
-  const resp = await octokit.request("GET /users/{username}/repos", {
-    username: "ssxst31",
+export const fetchRepos = async (username: string) => {
+  const res = await octokit.request("GET /users/{username}/repos", {
+    username: username,
   });
 
-  return resp;
+  return res;
 };
