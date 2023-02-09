@@ -26,6 +26,7 @@ function Navbar() {
 
       setRepos(res.data);
       navigate(`repository/${search}`);
+      setSearch("");
     }
   };
 
