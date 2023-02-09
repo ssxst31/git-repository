@@ -33,12 +33,13 @@ function Navbar() {
   return (
     <div className="inline-flex items-center justify-between w-full px-8 bg-[#161B22] h-14">
       <div
-        className="text-white"
+        className="flex items-center text-white cursor-pointer"
         onClick={() => {
           navigate(`/`);
         }}
       >
-        로고
+        <img src="/icons/logo.png" className="w-8 h-8 mr-2" alt="logo" />
+        <span className="text-2xl">IssueHouse</span>
       </div>
       <form onSubmit={(e) => onSearch(e)}>
         <input
