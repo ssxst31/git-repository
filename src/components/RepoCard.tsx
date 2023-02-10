@@ -3,6 +3,7 @@ import { useRecoilState } from "recoil";
 import { reposSubscribeState } from "store";
 import { Repo } from "type";
 import RepoIssues from "components/RepoIssues";
+import ErrorBoundary from "components/ErrorBoundary";
 
 interface RepoCardProps {
   repo: Repo;
@@ -12,13 +13,13 @@ interface RepoCardProps {
 function RepoCard({ repo, showIssue }: RepoCardProps) {
   const [reposSubscribe, setReposSubscribe] =
     useRecoilState<Repo[]>(reposSubscribeState);
-  console.log(33);
+
   return (
     <a
       href={repo.clone_url}
       target="_blank"
       rel="noreferrer"
-      className="inline-block w-full"
+      className="justify-center inline-block w-full"
       key={repo.id}
     >
       <div className="flex flex-col justify-between px-4 py-4 bg-white border border-black border-solid rounded-2xl">
@@ -49,10 +50,12 @@ function RepoCard({ repo, showIssue }: RepoCardProps) {
           <div className="text-slate-300">{repo.updated_at}</div>
         </div>
         {showIssue && (
-          <div className="pt-2 mt-2 text-lg font-semibold border-t border-gray-500 border-solid">
-            issues
-            <RepoIssues loginId={repo.owner.login} repository={repo.name} />
-          </div>
+          <ErrorBoundary>
+            <div className="pt-2 mt-2 text-lg font-semibold border-t border-gray-500 border-solid">
+              issues
+              <RepoIssues loginId={repo.owner.login} repository={repo.name} />
+            </div>
+          </ErrorBoundary>
         )}
       </div>
     </a>
