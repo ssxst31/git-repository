@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { useRecoilState } from "recoil";
 import { toast } from "react-toastify";
 import { formatDistance, subDays } from "date-fns";
@@ -17,6 +18,11 @@ interface RepoCardProps {
 function RepoCard({ repo, showIssue }: RepoCardProps) {
   const [reposSubscribe, setReposSubscribe] =
     useRecoilState<Repo[]>(reposSubscribeState);
+  const contactRef = useRef<HTMLAnchorElement>(null);
+
+  const onContactClick = () => {
+    contactRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <a
@@ -25,6 +31,7 @@ function RepoCard({ repo, showIssue }: RepoCardProps) {
       rel="noreferrer"
       className="justify-center inline-block w-full"
       key={repo.id}
+      ref={contactRef}
     >
       <div className="flex flex-col justify-between px-4 py-4 bg-white border border-black border-solid rounded-2xl">
         <div className="flex justify-between mb-4">
@@ -70,7 +77,11 @@ function RepoCard({ repo, showIssue }: RepoCardProps) {
           <ErrorBoundary>
             <div className="pt-2 mt-2 text-lg font-semibold border-t border-gray-500 border-solid">
               issues
-              <RepoIssues loginId={repo.owner.login} repository={repo.name} />
+              <RepoIssues
+                loginId={repo.owner.login}
+                repository={repo.name}
+                onContactClick={onContactClick}
+              />
             </div>
           </ErrorBoundary>
         )}

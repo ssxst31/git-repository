@@ -7,25 +7,27 @@ import useRepoIssues from "hooks/useRepoIssues";
 interface RepoIssuesProps {
   loginId: string;
   repository: string;
+  onContactClick: () => void;
 }
 
 const DEFAULT_PAGE_SIZE = 3;
 
-function RepoIssues({ loginId, repository }: RepoIssuesProps) {
+function RepoIssues({ loginId, repository, onContactClick }: RepoIssuesProps) {
   const [page, setPage] = useState<number>(1);
   const issues = useRepoIssues(loginId, repository);
 
   const offset = (page - 1) * DEFAULT_PAGE_SIZE;
   const limit = (page - 1) * DEFAULT_PAGE_SIZE + DEFAULT_PAGE_SIZE;
 
-  const handlePageChange = (page: any) => {
+  const handlePageChange = (page: number) => {
+    onContactClick();
     setPage(page);
   };
 
   if (!issues) return <></>;
 
   return (
-    <>
+    <div>
       {issues.slice(offset, limit).map((issue: any) => (
         <RepoIssueCard issue={issue} key={issue.id} />
       ))}
@@ -36,7 +38,7 @@ function RepoIssues({ loginId, repository }: RepoIssuesProps) {
           onPageChange={handlePageChange}
         />
       )}
-    </>
+    </div>
   );
 }
 
