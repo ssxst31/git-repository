@@ -5,6 +5,7 @@ import { reposSubscribeState } from "store";
 import { Repo } from "type";
 import RepoIssues from "components/RepoIssues";
 import ErrorBoundary from "components/ErrorBoundary";
+import Avatar from "components/Avatar";
 
 interface RepoCardProps {
   repo: Repo;
@@ -25,8 +26,11 @@ function RepoCard({ repo, showIssue }: RepoCardProps) {
     >
       <div className="flex flex-col justify-between px-4 py-4 bg-white border border-black border-solid rounded-2xl">
         <div className="flex justify-between mb-4">
-          <div className="text-xl font-semibold text-black w-72">
-            {repo.full_name}
+          <div className="flex">
+            <Avatar src={repo.owner.avatar_url} />
+            <div className="w-64 text-xl font-semibold text-black">
+              {repo.full_name}
+            </div>
           </div>
           <div
             className="text-sm font-semibold text-black"

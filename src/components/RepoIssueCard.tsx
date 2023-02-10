@@ -1,3 +1,5 @@
+import Avatar from "components/Avatar";
+
 interface RepoIssueCardProps {
   issue: any;
 }
@@ -7,11 +9,7 @@ function RepoIssueCard({ issue }: RepoIssueCardProps) {
     <>
       <div className="flex pb-2 border-b border-gray-200 border-solid">
         <div className="shadow-2xl shadow-slate-900">
-          <img
-            src={issue.user.avatar_url}
-            className="mr-2 w-7 h-7 rounded-[50%] "
-            alt="userAvatar"
-          />
+          <Avatar src={issue.user.avatar_url} />
         </div>
         <div className="flex items-center">
           <div className="mr-2 font-medium">{issue.user.login}</div>
