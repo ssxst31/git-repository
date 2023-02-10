@@ -1,4 +1,5 @@
 import { useRecoilState } from "recoil";
+import { toast } from "react-toastify";
 
 import { reposSubscribeState } from "store";
 import { Repo } from "type";
@@ -37,7 +38,7 @@ function RepoCard({ repo, showIssue }: RepoCardProps) {
                 );
               } else {
                 if (reposSubscribe.length > 3)
-                  return alert("구독은 최대 4개까지 됩니다.");
+                  return toast.error("구독은 최대 4개까지 됩니다.");
                 setReposSubscribe((prev) => prev.concat(repo));
               }
             }}
