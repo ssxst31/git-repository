@@ -1,5 +1,7 @@
 import { useRecoilState } from "recoil";
 import { toast } from "react-toastify";
+import { formatDistance, subDays } from "date-fns";
+import ko from "date-fns/locale/ko";
 
 import { reposSubscribeState } from "store";
 import { Repo } from "type";
@@ -52,7 +54,17 @@ function RepoCard({ repo, showIssue }: RepoCardProps) {
         </div>
         <div className="flex justify-between">
           <div className="text-slate-400">{repo.language}</div>
-          <div className="text-slate-300">{repo.updated_at}</div>
+          <div className="text-slate-300">
+            {repo.updated_at &&
+              formatDistance(
+                new Date(repo.updated_at),
+                subDays(new Date(), 0),
+                {
+                  addSuffix: true,
+                  locale: ko,
+                }
+              )}
+          </div>
         </div>
         {showIssue && (
           <ErrorBoundary>

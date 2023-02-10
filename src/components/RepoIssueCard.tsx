@@ -1,3 +1,6 @@
+import { formatDistance, subDays } from "date-fns";
+import ko from "date-fns/locale/ko";
+
 import Avatar from "components/Avatar";
 
 interface RepoIssueCardProps {
@@ -14,7 +17,18 @@ function RepoIssueCard({ issue }: RepoIssueCardProps) {
         <div className="flex items-center">
           <div className="mr-2 font-medium">{issue.user.login}</div>
           <div className="text-xs text-stone-300">
-            commented {issue.created_at}
+            <span className="mr-1">commented</span>
+            <span>
+              {issue.created_at &&
+                formatDistance(
+                  new Date(issue.created_at),
+                  subDays(new Date(), 0),
+                  {
+                    addSuffix: true,
+                    locale: ko,
+                  }
+                )}
+            </span>
           </div>
         </div>
       </div>
