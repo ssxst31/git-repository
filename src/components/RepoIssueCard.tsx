@@ -11,9 +11,8 @@ function RepoIssueCard({ issue }: RepoIssueCardProps) {
   return (
     <>
       <div className="flex pb-2 border-b border-gray-200 border-solid">
-        <div className="shadow-2xl shadow-slate-900">
-          <Avatar src={issue.user.avatar_url} />
-        </div>
+        <Avatar src={issue.user.avatar_url} />
+
         <div className="flex items-center">
           <div className="mr-2 font-medium">{issue.user.login}</div>
           <div className="text-xs text-stone-300">
@@ -32,7 +31,9 @@ function RepoIssueCard({ issue }: RepoIssueCardProps) {
           </div>
         </div>
       </div>
-      <div className="py-6 whitespace-pre-wrap ">{issue.body}</div>
+      <div className="py-6 text-sm break-all whitespace-pre-wrap">
+        {issue.body}
+      </div>
     </>
   );
 }
