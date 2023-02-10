@@ -18,7 +18,7 @@ function Navbar() {
 
   const onSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(typeof search);
+
     if (typeof search === "undefined" || search === "") {
       setRepos([]);
     } else {
@@ -31,7 +31,7 @@ function Navbar() {
   };
 
   return (
-    <div className="inline-flex items-center justify-between w-full px-8 bg-[#161B22] h-14">
+    <header className="inline-flex items-center justify-between w-full px-8 bg-[#161B22] h-14 fixed">
       <div
         className="flex items-center text-white cursor-pointer"
         onClick={() => {
@@ -50,7 +50,7 @@ function Navbar() {
           className="w-full rounded-md border border-[#e0e0e0] bg-white py-2 px-3 text-[#6B7280] outline-none focus:border-red-500 focus:shadow-md"
         />
       </form>
-    </div>
+    </header>
   );
 }
 
