@@ -24,6 +24,18 @@ function RepoCard({ repo, showIssue }: RepoCardProps) {
     contactRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const subscribeRepo = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.preventDefault();
+
+    if (reposSubscribe.some((el) => el.id === repo.id)) {
+      setReposSubscribe((prev) => prev.filter((el) => el.id !== repo.id));
+    } else {
+      if (reposSubscribe.length > 3)
+        return toast.error("구독은 최대 4개까지 됩니다.");
+      setReposSubscribe((prev) => prev.concat(repo));
+    }
+  };
+
   return (
     <a
       href={repo.clone_url}
@@ -44,16 +56,7 @@ function RepoCard({ repo, showIssue }: RepoCardProps) {
           <div
             className="text-sm font-semibold text-black"
             onClick={(e) => {
-              e.preventDefault();
-              if (reposSubscribe.some((el) => el.id === repo.id)) {
-                setReposSubscribe((prev) =>
-                  prev.filter((el) => el.id !== repo.id)
-                );
-              } else {
-                if (reposSubscribe.length > 3)
-                  return toast.error("구독은 최대 4개까지 됩니다.");
-                setReposSubscribe((prev) => prev.concat(repo));
-              }
+              subscribeRepo(e);
             }}
           >
             {reposSubscribe.some((el) => el.id === repo.id) ? "삭제" : "추가"}
@@ -61,7 +64,7 @@ function RepoCard({ repo, showIssue }: RepoCardProps) {
         </div>
         <div className="flex justify-between">
           <div className="text-slate-400">{repo.language}</div>
-          <div className="text-slate-300">
+          <div className="text-sm text-gray-300">
             {repo.updated_at &&
               formatDistance(
                 new Date(repo.updated_at),
