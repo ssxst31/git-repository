@@ -18,10 +18,10 @@ function PaginationWrapper({
       totalItemsCount={totalPages}
       pageRangeDisplayed={5}
       onChange={onPageChange}
-      itemClass="text-red-200 inline-flex w-8 h-8  cursor-pointer border-red-400 border border-solid  items-center justify-center"
-      linkClass="item-link inline-block cursor-pointer "
-      activeClass="text-black inline-block"
-      activeLinkClass="active-link inline-block"
+      itemClass="text-black inline-flex w-4 h-4 cursor-pointer border-black border border-solid  items-center justify-center m-1 p-3 hover:text-red-500 hover:border-red-500 rounded-sm"
+      linkClass="item-link inline-block cursor-pointer"
+      activeClass="text-red-500 inline-block hover:text-red-500 border-red-500"
+      activeLinkClass="active-link inline-block text-red-500 hover:text-red-500"
     />
   );
 }
