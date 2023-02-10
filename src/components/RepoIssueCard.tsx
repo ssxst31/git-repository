@@ -12,7 +12,6 @@ function RepoIssueCard({ issue }: RepoIssueCardProps) {
     <>
       <div className="flex pb-2 border-b border-gray-200 border-solid">
         <Avatar src={issue.user.avatar_url} />
-
         <div className="flex items-center">
           <div className="mr-2 font-medium">{issue.user.login}</div>
           <div className="text-xs text-stone-300">
