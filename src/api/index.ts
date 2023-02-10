@@ -15,9 +15,10 @@ export const fetchRepos = async (username: string) => {
 };
 
 export const fetchRepoIssues = async (username: string, repository: string) => {
-  const res = Axios.get(
-    `https://api.github.com/repos/${username}/${repository}/issues`
-  );
+  const res = await octokit.request("GET /repos/{owner}/{repo}/issues", {
+    owner: username,
+    repo: repository,
+  });
 
   return res;
 };
