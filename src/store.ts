@@ -5,11 +5,6 @@ import { Repo } from "type";
 
 const { persistAtom } = recoilPersist();
 
-export const reposState = atom<Repo[]>({
-  key: "repos",
-  default: [],
-});
-
 export const reposSubscribeState = atom<Repo[]>({
   key: "reposSubscribe",
   default: [],

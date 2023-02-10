@@ -1,15 +1,11 @@
 import { useState } from "react";
-import { useSetRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
-import { fetchRepos } from "api";
-import { reposState } from "store";
-import { Repo } from "type";
+import { toast } from "react-toastify";
 
 function Navbar() {
   const navigate = useNavigate();
 
   const [search, setSearch] = useState<string>("");
-  const setRepos = useSetRecoilState<Repo[]>(reposState);
 
   const onChangeSearch = (e: any) => {
     e.preventDefault();
@@ -20,14 +16,11 @@ function Navbar() {
     e.preventDefault();
 
     if (typeof search === "undefined" || search === "") {
-      setRepos([]);
-    } else {
-      const res = await fetchRepos(search);
-
-      setRepos(res.data);
-      navigate(`repository/${search}`);
-      setSearch("");
+      return toast.error("다시 확인해 주세요.");
     }
+
+    navigate(`repository/${search}`);
+    setSearch("");
   };
 
   return (
