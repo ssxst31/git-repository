@@ -6,8 +6,8 @@ import ko from "date-fns/locale/ko";
 
 import { reposSubscribeState } from "store";
 import { Repo } from "type";
-import RepoIssues from "components/RepoIssues";
-import Avatar from "components/Avatar";
+import RepoIssues from "components/repo/RepoIssues";
+import Avatar from "components/common/Avatar";
 
 interface RepoCardProps {
   repo: Repo;

@@ -1,7 +1,7 @@
 import { formatDistance, subDays } from "date-fns";
 import ko from "date-fns/locale/ko";
 
-import Avatar from "components/Avatar";
+import Avatar from "components/common/Avatar";
 
 interface RepoIssueCardProps {
   issue: any;

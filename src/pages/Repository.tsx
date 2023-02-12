@@ -1,4 +1,4 @@
-import RepositoryContainer from "components/RepositoryContainer";
+import RepositoryContainer from "components/pages/RepositoryContainer";
 
 function Repository() {
   return <RepositoryContainer />;

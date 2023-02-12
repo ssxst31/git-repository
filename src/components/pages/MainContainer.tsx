@@ -2,7 +2,7 @@ import { useRecoilValue } from "recoil";
 
 import { reposSubscribeState } from "store";
 import { Repo } from "type";
-import RepoCard from "components/RepoCard";
+import RepoCard from "components/repo/RepoCard";
 
 function MainContainer() {
   const reposSubscribe = useRecoilValue<Repo[]>(reposSubscribeState);

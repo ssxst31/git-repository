@@ -1,4 +1,4 @@
-import MainContainer from "components/MainContainer";
+import MainContainer from "components/pages/MainContainer";
 
 function Main() {
   return <MainContainer />;

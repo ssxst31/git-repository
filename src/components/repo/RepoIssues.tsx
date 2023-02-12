@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import RepoIssueCard from "components/RepoIssueCard";
-import PaginationWrapper from "components/PaginationWrapper";
+import RepoIssueCard from "components/repo/RepoIssueCard";
+import PaginationWrapper from "components/common/PaginationWrapper";
 import useRepoIssues from "hooks/useRepoIssues";
 
 interface RepoIssuesProps {

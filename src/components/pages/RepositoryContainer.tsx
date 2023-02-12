@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import RepoCard from "components/RepoCard";
+import RepoCard from "components/repo/RepoCard";
 import useRepos from "hooks/useRepos";
 
 function RepositoryContainer() {
