@@ -7,7 +7,6 @@ import ko from "date-fns/locale/ko";
 import { reposSubscribeState } from "store";
 import { Repo } from "type";
 import RepoIssues from "components/RepoIssues";
-import ErrorBoundary from "components/ErrorBoundary";
 import Avatar from "components/Avatar";
 
 interface RepoCardProps {
@@ -77,16 +76,14 @@ function RepoCard({ repo, showIssue }: RepoCardProps) {
           </div>
         </div>
         {showIssue && (
-          <ErrorBoundary>
-            <div className="pt-2 mt-2 text-lg font-semibold border-t border-gray-500 border-solid">
-              issues
-              <RepoIssues
-                loginId={repo.owner.login}
-                repository={repo.name}
-                onContactClick={onContactClick}
-              />
-            </div>
-          </ErrorBoundary>
+          <div className="pt-2 mt-2 text-lg font-semibold border-t border-gray-500 border-solid">
+            issues
+            <RepoIssues
+              loginId={repo.owner.login}
+              repository={repo.name}
+              onContactClick={onContactClick}
+            />
+          </div>
         )}
       </div>
     </a>
