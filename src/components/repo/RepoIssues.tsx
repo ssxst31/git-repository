@@ -24,7 +24,7 @@ function RepoIssues({ loginId, repository, onContactClick }: RepoIssuesProps) {
     setPage(page);
   };
 
-  if (!issues) return <></>;
+  if (!issues) return <div />;
 
   return (
     <div>

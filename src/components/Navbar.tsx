@@ -7,7 +7,7 @@ function Navbar() {
 
   const [search, setSearch] = useState<string>("");
 
-  const onChangeSearch = (e: any) => {
+  const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setSearch(e.target.value);
   };
@@ -40,7 +40,7 @@ function Navbar() {
           type="text"
           value={search}
           onChange={onChangeSearch}
-          className="w-full rounded-md border border-[#e0e0e0] bg-white py-2 px-3 text-[#6B7280] outline-none focus:border-red-500 focus:shadow-md"
+          className="w-full px-3 py-2 text-black bg-white border rounded-md outline-none focus:border-red-500 focus:shadow-md"
         />
       </form>
     </header>

@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 import { fetchRepoIssues } from "api";
 
-function useRepoIssues(username: any, repository: any) {
+function useRepoIssues(username: string, repository: string) {
   const { data } = useSWR(
     `https://api.github.com/repos/${username}/${repository}/issues`,
     () => fetchRepoIssues(username, repository),

@@ -2,7 +2,7 @@ import Pagination from "react-js-pagination";
 
 interface PaginationWrapperProps {
   totalPages: number;
-  onPageChange: any;
+  onPageChange: (page: number) => void;
   activePage: number;
 }
 
