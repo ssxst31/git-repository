@@ -1,5 +1,4 @@
 import { Octokit } from "octokit";
-import Axios from "axios";
 
 const octokit = new Octokit({
   auth: process.env.REACT_APP_GIT_TOKEN,
