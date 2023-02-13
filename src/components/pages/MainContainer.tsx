@@ -12,7 +12,7 @@ function MainContainer() {
   };
 
   return (
-    <div className="pt-16 mx-auto space-y-2 w-96">
+    <section className="pt-16 mx-auto space-y-2 w-96">
       {reposSubscribe.map((repo) => (
         <RepoCard key={repo.id} repo={repo} showIssue={!!repo.open_issues} />
       ))}
@@ -22,7 +22,7 @@ function MainContainer() {
       >
         <img className="w-14 h-14" src="/icons/arrow-up.png" alt="arrow-up" />
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -23,11 +23,11 @@ function RepositoryContainer() {
   }
 
   return (
-    <div className="pt-16 mx-auto space-y-2 w-96">
+    <section className="pt-16 mx-auto space-y-2 w-96">
       {repos.map((repo) => (
         <RepoCard key={repo.id} repo={repo} showIssue={false} />
       ))}
-    </div>
+    </section>
   );
 }
 
