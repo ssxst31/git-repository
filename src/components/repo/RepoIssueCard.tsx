@@ -9,7 +9,13 @@ interface RepoIssueCardProps {
 
 function RepoIssueCard({ issue }: RepoIssueCardProps) {
   return (
-    <>
+    <a
+      href={issue.html_url}
+      target="_blank"
+      rel="noreferrer"
+      className="justify-center inline-block w-full"
+    >
+      <span className="text-xl">{issue.title}</span>
       <div className="flex pb-2 border-b border-gray-200 border-solid">
         <Avatar src={issue.user.avatar_url} />
         <div className="flex items-center">
@@ -30,10 +36,10 @@ function RepoIssueCard({ issue }: RepoIssueCardProps) {
           </div>
         </div>
       </div>
-      <div className="py-6 text-sm break-all whitespace-pre-wrap">
+      <div className="py-6 text-sm font-light break-all whitespace-pre-wrap">
         {issue.body}
       </div>
-    </>
+    </a>
   );
 }
 
