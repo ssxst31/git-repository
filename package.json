@@ -1,5 +1,5 @@
 {
-  "homepage": "https://ssxst31.github.io/issue-house",
+  "homepage": "https://ssxst31.github.io/issue-house/",
   "name": "git-repository",
   "version": "0.1.0",
   "private": true,
@@ -28,7 +28,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI= npm run build",
+    "build": "npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
