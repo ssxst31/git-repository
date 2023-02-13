@@ -1,47 +1,57 @@
-# Getting Started with Create React App
+# issue-house 프로젝트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://ssxst31.github.io/issue-house/
+<br/><br/>
 
-## Available Scripts
+# 📋 프로젝트 개요
 
-In the project directory, you can run:
+- 깃허브 이슈를 모아볼 수 있는 프로젝트입니다.
+  <br/><br/>
 
-### `npm start`
+# 🏗️ 페이지 소개
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 메인페이지
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[![2023-02-13-12-19-32.png](https://i.postimg.cc/bwPFqx4d/2023-02-13-12-19-32.png)](https://postimg.cc/rKh9JrVL)
 
-### `npm test`
+- Tailwind CSS로 전반적인 레이아웃을 잡았습니다.
+- 구독한 레파지토리의 이슈를 볼 수 있습니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 상세페이지
 
-### `npm run build`
+[![2023-02-13-12-19-55.png](https://i.postimg.cc/tTJ3XJXs/2023-02-13-12-19-55.png)](https://postimg.cc/Q9L9mXKD)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 아이디를 검색해 레파지토리를 구독할 수 있습니다.
+- 구독한 레파 히토리는 메인 페이지에서 볼 수 있습니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  <br/><br/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 👟 실행 방법
 
-### `npm run eject`
+```bash
+npm install
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br/><br/>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# 👷 기능 구현사항
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- 깃허브 유저 검색기능
+- 이슈 페이지네이션
+- 구독된 레파지토리는 로컬스토리지 저장
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<br/>
 
-## Learn More
+# ⚙️ 기술스택
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### TypeScript, React
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-# git-repository
+### postcss, tailwind CSS
+
+<br/>
+
+# 🚀 미해결 이슈 & 개선 가능 사항
+
+- 이슈 WaterFall 현상 -> Suspense,Error Boundary 사용
+- 로딩시 스켈레톤 -> 사용자 경험 개선
