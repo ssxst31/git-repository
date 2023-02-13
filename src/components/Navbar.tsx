@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function Navbar() {
@@ -27,19 +27,16 @@ function Navbar() {
 
   return (
     <header className="inline-flex items-center justify-between w-full px-8 bg-[#161B22] h-14 fixed">
-      <div
-        className="flex items-center text-white cursor-pointer"
-        onClick={() => {
-          navigate(`/`);
-        }}
-      >
-        <img
-          src="https://i.postimg.cc/RCgXk3Bx/logo.png"
-          className="w-8 h-8 mr-2"
-          alt="logo"
-        />
-        <span className="text-2xl">IssueHouse</span>
-      </div>
+      <Link to="/">
+        <h1 className="flex items-center text-white cursor-pointer">
+          <img
+            src="https://i.postimg.cc/RCgXk3Bx/logo.png"
+            className="w-8 h-8 mr-2"
+            alt="logo"
+          />
+          <span className="text-2xl">IssueHouse</span>
+        </h1>
+      </Link>
       <form onSubmit={(e) => onSearch(e)}>
         <input
           ref={inputRef}
