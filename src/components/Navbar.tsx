@@ -1,26 +1,28 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function Navbar() {
   const navigate = useNavigate();
 
-  const [search, setSearch] = useState<string>("");
-
-  const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    setSearch(e.target.value);
-  };
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const onSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (typeof search === "undefined" || search === "") {
+    let inputValue = inputRef.current?.value;
+    const notHangeulRegExp = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
+
+    if (
+      typeof inputValue === "undefined" ||
+      inputValue === "" ||
+      notHangeulRegExp.test(inputValue)
+    ) {
       return toast.error("다시 확인해 주세요.");
     }
 
-    navigate(`repository/${search}`);
-    setSearch("");
+    navigate(`repository/${inputValue}`);
+    inputValue = "";
   };
 
   return (
@@ -36,10 +38,9 @@ function Navbar() {
       </div>
       <form onSubmit={(e) => onSearch(e)}>
         <input
+          ref={inputRef}
           placeholder="Find a repository"
           type="text"
-          value={search}
-          onChange={onChangeSearch}
           className="w-full px-3 py-2 text-black bg-white border rounded-md outline-none focus:border-red-500 focus:shadow-md"
         />
       </form>
