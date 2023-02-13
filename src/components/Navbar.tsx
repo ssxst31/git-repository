@@ -33,7 +33,11 @@ function Navbar() {
           navigate(`/`);
         }}
       >
-        <img src="/icons/logo.png" className="w-8 h-8 mr-2" alt="logo" />
+        <img
+          src="https://i.postimg.cc/RCgXk3Bx/logo.png"
+          className="w-8 h-8 mr-2"
+          alt="logo"
+        />
         <span className="text-2xl">IssueHouse</span>
       </div>
       <form onSubmit={(e) => onSearch(e)}>

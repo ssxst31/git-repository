@@ -20,7 +20,11 @@ function MainContainer() {
         className="fixed cursor-pointer bottom-4 right-4"
         onClick={moveToTop}
       >
-        <img className="w-14 h-14" src="/icons/arrow-up.png" alt="arrow-up" />
+        <img
+          className="w-14 h-14"
+          src="https://i.postimg.cc/t4KrBLH1/arrow-up.png"
+          alt="arrow-up"
+        />
       </div>
     </section>
   );
