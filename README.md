@@ -1,6 +1,6 @@
 # issue-house 프로젝트
 
-https://ssxst31.github.io/issue-house
+https://issue-house.netlify.app
 <br/><br/>
 
 # 📋 프로젝트 개요
