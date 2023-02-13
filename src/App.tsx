@@ -7,7 +7,7 @@ import Navbar from "components/Navbar";
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.REACT_APP_PUBLIC_URL}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <RecoilRoot>
         <Navbar />
         <Routes>
