@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/issue-house/static/css/main.0b0ff9ef.css",
-    "main.js": "/issue-house/static/js/main.098444f9.js",
+    "main.js": "/issue-house/static/js/main.b5aec63f.js",
     "index.html": "/issue-house/index.html",
     "main.0b0ff9ef.css.map": "/issue-house/static/css/main.0b0ff9ef.css.map",
-    "main.098444f9.js.map": "/issue-house/static/js/main.098444f9.js.map"
+    "main.b5aec63f.js.map": "/issue-house/static/js/main.b5aec63f.js.map"
   },
   "entrypoints": [
     "static/css/main.0b0ff9ef.css",
-    "static/js/main.098444f9.js"
+    "static/js/main.b5aec63f.js"
   ]
 }
