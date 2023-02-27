@@ -53,5 +53,5 @@ npm start
 
 # 🚀 미해결 이슈 & 개선 가능 사항
 
-- 이슈 WaterFall 현상 -> Suspense,Error Boundary 사용
+- 이슈 에러 처리 -> Suspense, Error Boundary 사용
 - 로딩시 스켈레톤 -> 사용자 경험 개선
