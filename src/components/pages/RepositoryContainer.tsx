@@ -8,7 +8,11 @@ function RepositoryContainer() {
   const params = useParams() as { user: string };
   const { user } = params;
 
-  const repos = useRepos(user);
+  const { repos, isError } = useRepos(user);
+
+  if (isError) {
+    return <div />;
+  }
 
   if (!repos) {
     return (
