@@ -8,6 +8,7 @@ function useRepoIssues(username: string, repository: string) {
     `https://api.github.com/repos/${username}/${repository}/issues`,
     () => fetchRepoIssues(username, repository),
     {
+      suspense: true,
       revalidateOnFocus: false,
       onError: (err) => {
         if (err) {
